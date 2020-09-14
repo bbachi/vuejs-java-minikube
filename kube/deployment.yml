@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vue-webapp
+  name: vue-webapp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: vue-webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vue-webapp
+    spec:
+      containers:
+      - image: docker.io/bbachin1/vuejs-java-webapp
+        name: webapp
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 8080
+status: {}
